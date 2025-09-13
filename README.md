@@ -45,7 +45,7 @@ hotel_management/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/hotel-management-system.git
+git clone https://github.com/pratik0221/hotel-management-system.git
 cd hotel-management-system
 
 2️⃣ Create Virtual Environment (optional but recommended)
