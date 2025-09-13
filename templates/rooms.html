@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rooms - Hotel Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Rooms</h2>
+
+    <!-- Add Room Form -->
+    <form method="POST" action="{{ url_for('add_room') }}">
+        <input type="text" name="number" placeholder="Room Number" required>
+        <input type="text" name="type" placeholder="Room Type" required>
+        <input type="number" name="price" placeholder="Price/Night" required>
+        <button type="submit">Add Room</button>
+    </form>
+
+    <!-- Rooms Table -->
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>ID</th>
+            <th>Room Number</th>
+            <th>Type</th>
+            <th>Price/Night</th>
+            <th>Status</th>
+        </tr>
+        {% for r in rooms %}
+        <tr>
+            <td>{{ r.room_id }}</td>
+            <td>{{ r.room_number }}</td>
+            <td>{{ r.room_type }}</td>
+            <td>{{ r.price_per_night }}</td>
+            <td>{{ r.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">🏠 Back to Home</a>
+</body>
+</html>

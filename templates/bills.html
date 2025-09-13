@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bills - Hotel Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Bills</h2>
+
+    <!-- Generate Bill Form -->
+    <form method="POST" action="{{ url_for('generate_bill') }}">
+        <input type="number" name="guest_id" placeholder="Guest ID" required>
+        <input type="number" name="room_id" placeholder="Room ID" required>
+        <input type="number" name="days" placeholder="Number of Days" required>
+        <button type="submit">Generate Bill</button>
+    </form>
+
+    <!-- Bills Table -->
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Bill ID</th>
+            <th>Guest</th>
+            <th>Room</th>
+            <th>Check-in</th>
+            <th>Total Amount</th>
+        </tr>
+        {% for b in bills %}
+        <tr>
+            <td>{{ b.bill_id }}</td>
+            <td>{{ b.guest }}</td>
+            <td>{{ b.room_number }}</td>
+            <td>{{ b.check_in }}</td>
+            <td>{{ b.total_amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">🏠 Back to Home</a>
+</body>
+</html>

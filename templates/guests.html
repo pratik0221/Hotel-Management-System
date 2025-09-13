@@ -1,0 +1,14 @@
+<h2>Guests</h2>
+<form method="POST" action="{{ url_for('add_guest') }}">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name="phone" placeholder="Phone" required>
+    <input type="email" name="email" placeholder="Email">
+    <button type="submit">Add Guest</button>
+</form>
+<table border="1">
+    <tr><th>ID</th><th>Name</th><th>Phone</th><th>Email</th></tr>
+    {% for g in guests %}
+    <tr><td>{{ g.guest_id }}</td><td>{{ g.name }}</td><td>{{ g.phone }}</td><td>{{ g.email }}</td></tr>
+    {% endfor %}
+</table>
+<a href="/">Back</a>

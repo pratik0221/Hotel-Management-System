@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🏨 Hotel Management System</h1>
+    <nav>
+        <a href="{{ url_for('guests') }}">Guests</a> |
+        <a href="{{ url_for('rooms') }}">Rooms</a> |
+        <a href="{{ url_for('bills') }}">Bills</a>
+    </nav>
+</body>
+</html>
